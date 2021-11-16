@@ -31,7 +31,7 @@ numbers = filter(double_without7,numbers)
 print(numbers)
 print(sum(map(lambda x:x**2,numbers)))'''
 
-from functools import reduce
+''''from functools import reduce
 
 data = [['Tokyo', 35676000, 'primary'],
         ['New York', 19354922, 'nan'],
@@ -55,4 +55,13 @@ data = [['Tokyo', 35676000, 'primary'],
         ['Paris', 9904000, 'primary']]
 new_list = list(filter(lambda x:x[2] == 'primary' and x[1] > 10000000, data))
 new_list = list(map(lambda x: x[0], new_list))
-print('Cities:',reduce(lambda x,y: x +', '+ y,sorted(new_list)))
+print('Cities:',reduce(lambda x,y: x +', '+ y,sorted(new_list)))'''
+'''from functools import reduce
+def evaluate(coefficients, x):
+    n = len(coefficients) - 1
+    m_coef = list(map(lambda i: coefficients[i] * x**(n - i), range(n+1)))
+    print(reduce(lambda z,y: z+y, m_coef, 0))
+coefficients = [int(i) for i in input().split()]
+x = int(input())
+evaluate(coefficients, x)'''
+
