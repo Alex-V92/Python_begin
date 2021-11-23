@@ -1,11 +1,10 @@
-'''class Lion:
+class Lion:
     def roar(self):
         self.roar = print('Rrrrrrr!!!')
-simba = Lion()
+'''simba = Lion()
 simba.roar()'''
 
-
-'''class Counter:
+class Counter:
 
     def start_from(self, value=0):
         self.start_inc = value
@@ -17,9 +16,9 @@ simba.roar()'''
         print(f'Текущее значение счетчика = {self.start_inc}')
 
     def reset(self):
-        self.start_inc = 0'''
+        self.start_inc = 0
 
-'''class Point:
+class Point:
     def set_coordinates(self,x_coord,y_coord):
         self.x = x_coord
         self.y = y_coord
@@ -27,25 +26,25 @@ simba.roar()'''
         if not isinstance(pifagor, Point):
             return print("Передана не точка")
         return ((self.x - pifagor.x) ** 2 + (self.y - pifagor.y) ** 2) **0.5
-p1 = Point()
+'''p1 = Point()
 p2 = Point()
 p1.set_coordinates(1, 2)
 p2.set_coordinates(4, 6)
 d = p1.get_distance(p2)
 p1.get_distance(10)'''
 
-'''class Laptop:
+class Laptop:
     def __init__(self, brand, model, price):
         self.brand = brand
         self.model = model
         self.price = price
         self.laptop_name = f'{brand} {model}'
 
-hp = Laptop('hp', '15-bw0xx', 57000)
+'''hp = Laptop('hp', '15-bw0xx', 57000)
 print(hp.price) # выводит 57000
 print(hp.laptop_name) # выводит "hp 15-bw0xx"'''
 
-'''class SoccerPlayer:
+class SoccerPlayer:
     def __init__(self,name,surname):
         self.name = name
         self.surname = surname
@@ -59,7 +58,7 @@ print(hp.laptop_name) # выводит "hp 15-bw0xx"'''
     def statistics(self):
         print(f'{self.surname} {self.name} - голы: {self.goals},передачи: {self.assists}')
 
-leo = SoccerPlayer('Leo', 'Messi')
+'''leo = SoccerPlayer('Leo', 'Messi')
 leo.score(700)
 leo.make_assist(500)
 leo.statistics() # выводит "Messi Leo - голы: 700, передачи: 500"
@@ -67,14 +66,14 @@ kokorin = SoccerPlayer('Alex', 'Kokorin')
 kokorin.score()
 kokorin.statistics() # выводит "Kokorin Alex - голы: 1, передачи: 0"'''
 
-'''class Zebra:
+class Zebra:
     def __init__(self):
         self.count_print = 0
     def which_stripe(self):
         self.count_print += 1
         print("Полоска белая" if self.count_print % 2 == 1 else "Полоска черная")
 
-z1 = Zebra()
+'''z1 = Zebra()
 z1.which_stripe() # печатает "Полоска белая"
 z1.which_stripe() # печатает "Полоска черная"
 z1.which_stripe() # печатает "Полоска белая"
@@ -82,7 +81,7 @@ z1.which_stripe() # печатает "Полоска белая"
 z2 = Zebra()
 z2.which_stripe() # печатает "Полоска белая"'''
 
-'''class Person:
+class Person:
     def __init__(self,first_name, last_name, age):
         self.first_name = first_name
         self.last_name = last_name
@@ -94,11 +93,11 @@ z2.which_stripe() # печатает "Полоска белая"'''
             return True
         return False
 
-p1 = Person('Jimi', 'Hendrix', 55)
+'''p1 = Person('Jimi', 'Hendrix', 55)
 print(p1.full_name())  # выводит "Hendrix Jimi"
 print(p1.is_adult()) # выводит "True"'''
 
-'''class Dog:
+class Dog:
     def __init__(self, name, age):
         self.name = name
         self.age = age
@@ -107,13 +106,13 @@ print(p1.is_adult()) # выводит "True"'''
     def speak(self, sound):
         return f'{self.name} says {sound}'
 
-jack = Dog("Jack", 4)
+'''jack = Dog("Jack", 4)
 
 print(jack.description()) # распечатает 'Jack is 4 years old'
 print(jack.speak("Woof Woof")) # распечатает 'Jack says Woof Woof'
 print(jack.speak("Bow Wow")) # распечатает 'Jack says Bow Wow'''
 
-'''class Stack:
+class Stack:
     def __init__(self):
         self.values = []
     def push(self,item):
@@ -136,7 +135,7 @@ print(jack.speak("Bow Wow")) # распечатает 'Jack says Bow Wow'''
     def size(self):
         return len(self.values)
 
-s = Stack()
+'''s = Stack()
 s.peek()  # распечатает 'Empty Stack'
 print(s.is_empty())  # распечатает True
 s.push('cat')  # кладем элемент 'cat' на вершину стека
@@ -151,7 +150,7 @@ print(s.pop())  # удаляем элемент True с вершины стек�
 print(s.size())  # распечатает 2'''
 
 
-'''class UserMail:
+class UserMail:
     def __init__(self,login, mail):
         self.login = login
         self.__email = mail
@@ -164,14 +163,14 @@ print(s.size())  # распечатает 2'''
             print('Ошибочная почта')
     email = property(fget=get_email, fset=set_email)
 
-k = UserMail('belosnezhka', 'prince@wait.you')
+'''k = UserMail('belosnezhka', 'prince@wait.you')
 print(k.email)  # prince@wait.you
 k.email = [1, 2, 3] # Ошибочная почта
 k.email = 'prince@still@.wait'  # Ошибочная почта
 k.email = 'prince@still.wait'
 print(k.email)  # prince@still.wait'''
 
-'''class Money:
+class Money:
     def __init__(self, dollars, cents):
         self.total_cents = cents + dollars * 100
 
@@ -202,7 +201,7 @@ print(k.email)  # prince@still.wait'''
     def __str__(self):
         return f'Ваше состояние составляет {self.dollars} долларов {self.cents} центов'
 
-Bill = Money(101, 99)
+'''Bill = Money(101, 99)
 print(Bill)  # Ваше состояние составляет 101 долларов 99 центов
 print(Bill.dollars, Bill.cents)  # 101 99
 Bill.dollars = 666
@@ -211,7 +210,7 @@ Bill.cents = 12
 print(Bill)  # Ваше состояние составляет 666 долларов 12 центов'''
 
 
-'''class Squart:
+class Squart:
     def __init__(self,line_a, line_b):
         self.__line_a = line_a
         self.__line_b = line_b
@@ -237,14 +236,14 @@ print(Bill)  # Ваше состояние составляет 666 доллар
             return self.__area
         return self.__area
 
-a = Squart(5, 10)
+'''a = Squart(5, 10)
 print(a.area)
 print(a.area)
 a.sides = 10, 15
 print(a.area)
 print(a.area)'''
 
-'''class Robot:
+class Robot:
 
     population = 0
 
@@ -266,11 +265,64 @@ print(a.area)'''
         print(f'{cls.population}, вот сколько нас еще осталось')
 
 
-r2 = Robot("R2-D2") # печатает "Робот R2-D2 был создан"
+'''r2 = Robot("R2-D2") # печатает "Робот R2-D2 был создан"
 r2.say_hello() # печатает "Робот R2-D2 приветствует тебя, особь человеческого рода"
 Robot.how_many() # печатает "1, вот сколько нас еще осталось"
 r2.destroy() # печатает "Робот R2-D2 был уничтожен"'''
-#
 
 
+class Vector:
+    def __init__(self, *args):
+        self.values = sorted([i for i in args if isinstance(i, int)])
 
+    def __str__(self):
+        if len(self.values) != 0:
+            return f'Вектор{tuple(i for i in self.values)}'
+        return 'Пустой вектор'
+
+    def __add__(self, other):
+        if isinstance(other, int):
+
+            return Vector(*tuple(i + other for i in self.values))
+
+        if isinstance(other, Vector):
+            if len(other.values) == len(self.values):
+                return Vector(*tuple(other.values[i] + self.values[i] for i in range(len(self.values))))
+
+            else:
+                return 'Сложение векторов разной длины недопустимо'
+        else:
+            print( f'Вектор нельзя сложить с {other}')
+
+    def __radd__(self, other):
+        return self.values + other
+
+    def __mul__(self, other):
+        if isinstance(other, int):
+            return Vector(*tuple(i * other for i in self.values))
+        elif isinstance(other, Vector):
+            if len(other.values) == len(self.values):
+                return Vector(*tuple(other.values[i] * self.values[i] for i in range(len(self.values))))
+            else:
+                return 'Умножение векторов разной длины недопустимо'
+        else:
+            print( f'Вектор нельзя умножать  с {other}')
+
+'''v1 = Vector(1,2,3)
+print(v1) # печатает "Вектор(1, 2, 3)"
+
+v2 = Vector(3,4,5)
+print(v2) # печатает "Вектор(3, 4, 5)"
+v3 = v1 + v2
+print(v3) # печатает "Вектор(4, 6, 8)"
+v4 = v3 + 5
+print(v4) # печатает "Вектор(9, 11, 13)"
+v5 = v1 * 2
+print(v5) # печатает "Вектор(2, 4, 6)"
+v5 + 'hi' # печатает "Вектор нельзя сложить с hi"
+v6 = Vector(1)
+v7 = v6 + v1
+v8 = v1 * v2
+print(v8)
+v9 = v6 * v1
+v5 * "hi"'''
