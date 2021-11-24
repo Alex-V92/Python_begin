@@ -181,3 +181,105 @@ second_car = Car('Audi', 230, 70000, 130)
 second_car.gasoline = [None]  # Печатает 'Ошибка заправки автомобиля'
 first_boat = Boat('Yamaha', 40, 'Petr')
 print(first_boat)  # Этой лодкой марки Yamaha владеет Petr'''
+
+class Initialization:
+    def __init__(self, capacity:int, food:list):
+        if not isinstance(capacity,int):
+            print('Количество людей должно быть целым числом')
+        else:
+            self.capacity = capacity
+            self.food = food
+
+class Vegetarian(Initialization):
+    def __str__(self):
+        return f'{self.capacity} людей предпочитают не есть мясо! Они предпочитают {self.food}'
+
+class MeatEater(Initialization):
+    def __str__(self):
+        return f'{self.capacity} мясоедов в Москве! Помимо мяса они едят еще и {self.food}'
+
+class SweetTooth(Initialization):
+    def __str__(self):
+        return f'Сладкоежек в Москве {self.capacity}. Их самая любимая еда: {self.food}'
+
+    def __eq__(self, other):
+        if isinstance(other, int):
+            return self.capacity == other
+        if isinstance(other,Initialization):
+            return self.capacity == other.capacity
+        else:
+            return f'Невозможно сравнить количество сладкоежек с {other}'
+
+    def __lt__(self, other):
+        if isinstance(other, int):
+            return self.capacity < other
+        if isinstance(other,Initialization):
+            return self.capacity < other.capacity
+        else:
+            return f'Невозможно сравнить количество сладкоежек с {other}'
+
+    def __gt__(self, other):
+        if isinstance(other, int):
+            return self.capacity > other
+        if isinstance(other,Initialization):
+            return self.capacity > other.capacity
+        else:
+            return f'Невозможно сравнить количество сладкоежек с {other}'
+
+'''v_first = Vegetarian(10000, ['Орехи', 'овощи', 'фрукты'])
+print(v_first)  # 10000 людей предпочитают не есть мясо! Они предпочитают ['Орехи', 'овощи', 'фрукты']
+v_second = Vegetarian([23], ['nothing'])  # Количество людей должно быть целым числом
+m_first = MeatEater(15000, ['Жареную картошку', 'рыба'])
+print(m_first)  # 15000 мясоедов в Москве! Помимо мяса они едят еще и ['Жареную картошку', 'рыба']
+s_first = SweetTooth(30000, ['Мороженое', 'Чипсы', 'ШОКОЛАД'])
+print(s_first)  # Сладкоежек в Москве 30000. Их самая любимая еда: ['Мороженое', 'Чипсы', 'ШОКОЛАД']
+print(s_first > v_first)  # True
+print(30000 == s_first)  # True
+print(s_first == 25000)  # False
+print(100000 < s_first)  # False
+print(100 < s_first)  # True'''
+
+class Wallet:
+    def __init__(self, currency:str, balance:int):
+        self.balance = balance
+        if not isinstance(currency, str):
+            raise TypeError('Неверный тип валюты')
+        if not len(currency) == 3:
+            raise NameError('Неверная длина названия валюты')
+        if not currency == currency.upper():
+            raise ValueError('Название должно состоять только из заглавных букв')
+        self.currency = currency
+
+    def __eq__(self, other):
+        if not isinstance(other, Wallet):
+            raise TypeError(f'Wallet не поддерживает сравнение с {other}')
+        if self.currency != other.currency:
+            raise ValueError('Нельзя сравнить разные валюты')
+        return self.balance == other.balance
+
+    def __add__(self, other):
+        if not isinstance(other, Wallet) or self.currency != other.currency:
+            raise ValueError('Данная операция запрещена')
+        new_balance_ad = self.balance+other.balance
+        return Wallet(self.currency, new_balance_ad)
+
+
+    def __sub__(self, other):
+        if not isinstance(other, Wallet) or self.currency != other.currency:
+            raise ValueError('Данная операция запрещена')
+        new_balance_sub = self.balance-other.balance
+        return Wallet(self.currency, new_balance_sub)
+
+
+'''wallet1 = Wallet('USD', 50)
+wallet2 = Wallet('RUB', 100)
+wallet3 = Wallet('RUB', 150)
+wallet4 = Wallet(12, 150)  # исключение TypeError('Неверный тип валюты')
+wallet5 = Wallet('qwerty', 150)  # исключение NameError('Неверная длина названия валюты')
+wallet6 = Wallet('abc', 150)  # исключение ValueError('Название должно состоять только из заглавных букв')
+print(wallet2 == wallet3)  # False
+print(wallet2 == 100)  # TypeError('Wallet не поддерживает сравнение с 100')
+print(wallet2 == wallet1)  # ValueError('Нельзя сравнить разные валюты')
+wallet7 = wallet2 + wallet3
+print(wallet7.currency, wallet7.balance)  # печатает 'RUB 250'
+wallet2 + 45  # ValueError('Данная операция запрещена')'''
